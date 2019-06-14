@@ -59,11 +59,26 @@ class battle{
     new BufferedReader(new InputStreamReader(System.in));
     String str=br.readLine();
     you_basyo=Integer.parseInt(str);
-    
+
   }
   void taiketu() throws IOException{
     String str;
     int iti,kougeki;
+    System.out.printli("攻撃はどこにしますか");
+    BufferedReader br=
+    new BufferedReader(new InputStreamReader(System.in));
+    str=br.readLine();
+    iti=Integer.perseInt(str);
+    System.out.println("攻撃のパワーは");
+    str=br.readLine();
+    kougeki=Integer.perseInt(str);
+    System.put.println();
+    you.kougeki(kougeki);
+    if(bu_basyo==iti){
+      bu.bougyo(kougeki*2);
+
+    }
+    else
 
   }
 }
