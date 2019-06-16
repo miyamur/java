@@ -52,7 +52,7 @@ class battle{
   private int you_basyo;
   battle()throws IOException{
     bu=new daimao();
-    you=new hwro();
+    you=new hero();
     System.out.println("対決開始");
     System.out.println("身をひそめる場所は");
     BufferedReader br=
@@ -64,21 +64,43 @@ class battle{
   void taiketu() throws IOException{
     String str;
     int iti,kougeki;
-    System.out.printli("攻撃はどこにしますか");
+    System.out.println("攻撃はどこにしますか");
     BufferedReader br=
     new BufferedReader(new InputStreamReader(System.in));
     str=br.readLine();
-    iti=Integer.perseInt(str);
+    iti=Integer.parseInt(str);
     System.out.println("攻撃のパワーは");
     str=br.readLine();
-    kougeki=Integer.perseInt(str);
-    System.put.println();
+    kougeki=Integer.parseInt(str);
+    System.out.println();
     you.kougeki(kougeki);
     if(bu_basyo==iti){
       bu.bougyo(kougeki*2);
 
     }
-    else
+    else{
+      System.out.println("外れました");
+    }
+    System.out.println();
+    System.out.println("大魔王のターンです");
+    System.out.println("エンターキーを押してください");
+    br.readLine();
+    iti=(int)(Math.random()*5)+1;
+    kougeki=(int)(Math.random()*100)+1;
+    bu.kougeki(kougeki);
+    if(you_basyo==iti){
+      you.kougeki(kougeki*2);
+    }
+    else{
+      System.out.println("外れました");
 
+  }
+}
+}
+
+class game{
+  public static void main(String[] args)throws IOException{
+    battle dokoka=new battle();
+    dokoka.taiketu();
   }
 }
